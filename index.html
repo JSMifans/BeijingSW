@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>北京水务</title>
+		<link href="./css/common.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/header.css" />
+		<link rel="stylesheet" href="./css/left.css" />
+		<link rel="stylesheet" href="./css/right.css" />
+		<link rel="stylesheet" href="./css/video.css" />
+		<link rel="stylesheet" href="./cesium/Build/Cesium/Widgets/widgets.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div id="cesium-container"></div>
+			<!-- 头部 -->
+			<div id="header-container">
+				<div class="left">
+					<div class="city">北京市</div>
+					<div class="tianqi"><img src="../images/rain.png" class="img" /></div>
+					<div class="text-rain">大雨</div>
+					<div class="wendu">17-18℃</div>
+				</div>
+				<div class="right">
+					<div id="headerNowDay"></div>
+					<div class="week">星期一</div>
+					<div id="mmddss"></div>
+				</div>
+				<div class="admin">
+					<div class="admin-img">
+						<img src="../images/header.png" srcset="" />
+					</div>
+				</div>
+				<div class="asscount">
+					<div>admin</div>
+					<div>管理员</div>
+				</div>
+				<div class="title-container">海淀区智慧水务大脑地理信息平台</div>
+			</div>
+			<!-- 右边 -->
+			<div id="left-container" style="display: none">
+				<div id="back" class="back"></div>
+				<div class="map-echart">
+					<div class="title-conponent">
+						<img class="titile-img" src="../images/title-top.png" />
+						<div class="text">海淀区概况</div>
+						<div class="us">HAIDIAN GAIKUANG</div>
+						<img class="title-bottom" src="../images/title-bottom.png" />
+					</div>
+					<div id="map-container"></div>
+					<div class="rain-pingfang">
+						<img class="countpng" src="../images/count.png" />
+						<div class="count">总库存</div>
+						<div class="num">1902.8</div>
+						<div class="unit">M²</div>
+						<img class="mapperpng" src="../images/mappei.png" />
+					</div>
+				</div>
+				<div class="left-table">
+					<div class="title-conponent">
+						<img class="titile-img" src="../images/title-top.png" />
+						<div class="text">巡查情况</div>
+						<div class="us">XUNCHA QINGKANG</div>
+						<img class="title-bottom" src="../images/title-bottom.png" />
+					</div>
+					<div class="table-container">
+						<div class="th-container">
+							<div class="item">日期</div>
+							<div class="item">河段</div>
+							<div class="item">河长</div>
+							<div class="item">具体问题</div>
+						</div>
+						<div class="td-container">
+							<div class="td-over">
+								<div class="td">
+									<div class="item ellipsis">2022-8-27</div>
+									<div class="item ellipsis">北京颐和路</div>
+									<div class="item ellipsis">1200M</div>
+									<div class="item ellipsis">河面有漂浮杂物,河面有漂浮杂物</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="search-container">
+					<div class="search-input">
+						<img class="search-img" src="./images/search.png" alt="" />
+						<input class="input" type="text" placeholder="请输入搜索内容" />
+					</div>
+					<div class="search-content">
+						<div class="item">
+							<div class="item-bg">
+								<img src="./images/camera.png" alt="" />
+								<!-- <img src="./images/camera-is.png" alt="" /> -->
+							</div>
+							<div class="text">摄像头</div>
+						</div>
+						<div class="item">
+							<div class="item-bg">
+								<img src="./images/icon.png" alt="" />
+								<!-- <img src="./images/camera-is.png" alt="" /> -->
+							</div>
+							<div class="text">水位</div>
+						</div>
+						<div class="item">
+							<div class="item-bg">
+								<img src="./images/value.png" alt="" />
+								<!-- <img src="./images/camera-is.png" alt="" /> -->
+							</div>
+							<div class="text">阀门</div>
+						</div>
+						<div class="item">
+							<div class="item-bg">
+								<img src="./images/pump.png" alt="" />
+								<!-- <img src="./images/camera-is.png" alt="" /> -->
+							</div>
+							<div class="text">水泵</div>
+						</div>
+					</div>
+					<div class="search-list">
+						<img class="to-home" src="../images/reset.png" alt="" @click="cameraBlck" />
+						<div class="camera-item">人脸识别01#</div>
+						<div class="camera-item">人脸识别02#</div>
+						<div class="camera-item">枪机01#</div>
+						<div class="camera-item">枪机04#</div>
+						<div class="camera-item">枪机07#</div>
+					</div>
+				</div>
+			</div>
+			<!-- 中间 -->
+			<div id="center-container" style="display: none">
+				<div class="clickitem">
+					<img class="item-img" src="./images/vector.png" alt="" />
+					<img class="icon" src="./images/ranging.png" alt="" />
+					<div class="text">侧距</div>
+				</div>
+				<div class="items clickitem">
+					<img class="item-img" src="./images/vector.png" alt="" style="display: none" />
+					<img class="icon" src="./images/ranging.png" alt="" />
+					<div class="text">测面</div>
+				</div>
+				<div class="items clickitem">
+					<img class="item-img" src="./images/vector.png" alt="" style="display: none" />
+					<img class="icon" src="./images/ranging.png" alt="" />
+					<div class="text">标记</div>
+				</div>
+				<div class="items clickitem">
+					<img class="item-img" src="./images/vector.png" alt="" style="display: none" />
+					<img class="icon" src="./images/ranging.png" alt="" />
+					<div class="text">图层</div>
+				</div>
+				<div class="items clickitem">
+					<img class="item-img" src="./images/vector.png" alt="" style="display: none" />
+					<img class="icon" src="./images/ranging.png" alt="" />
+					<div class="text">视角</div>
+				</div>
+				<div class="items clickitem">
+					<img class="item-img" src="./images/vector.png" alt="" style="display: none" />
+					<img class="icon" src="./images/ranging.png" alt="" />
+					<div class="text">重置</div>
+				</div>
+			</div>
+			<!-- 左边 -->
+			<div id="right-container">
+				<div class="tabFlower">
+					<div class="item">北京市</div>
+					<div class="item">海淀区</div>
+					<div class="item">监控大楼</div>
+				</div>
+				<div class="opens" id="opens"></div>
+				<div class="right-one">
+					<div class="bar-chart">
+						<!-- <TitleVue title-text="河湖统计" title-us="HEHU TONGJI"></TitleVue> -->
+						<div class="title-conponent">
+							<img class="titile-img" src="../images/title-top.png" />
+							<div class="text">河湖统计</div>
+							<div class="us">HEHU TONGJI</div>
+							<img class="title-bottom" src="../images/title-bottom.png" />
+						</div>
+						<div id="bar-container"></div>
+					</div>
+					<div class="video-chart">
+						<!-- <TitleVue title-text="视频融合" title-us="HEHU TONGJI"></TitleVue> -->
+						<div class="title-conponent">
+							<img class="titile-img" src="../images/title-top.png" />
+							<div class="text">视频融合</div>
+							<div class="us">HEHU TONGJI</div>
+							<img class="title-bottom" src="../images/title-bottom.png" />
+						</div>
+						<div class="video-chart-contianer">
+							<div class="item">
+								<img class="img" src="../images/video-container.png" alt="" />
+								<div class="text ellipsis">颐和路288号</div>
+							</div>
+							<div class="item">
+								<img class="img" src="../images/video-container.png" alt="" />
+								<div class="text ellipsis">颐和路288号</div>
+							</div>
+							<div class="item">
+								<img class="img" src="../images/video-container.png" alt="" />
+								<div class="text ellipsis">颐和路288号</div>
+							</div>
+							<div class="item">
+								<img class="img" src="../images/video-container.png" alt="" />
+								<div class="text ellipsis">颐和路288号</div>
+							</div>
+							<div class="item">
+								<img class="img" src="../images/video-container.png" alt="" />
+								<div class="text ellipsis">颐和路288号</div>
+							</div>
+							<div class="item">
+								<img class="img" src="../images/video-container.png" alt="" />
+								<div class="text ellipsis">颐和路288号</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="line-cahrt">
+						<!-- <TitleVue title-text="位移趋势统计" title-us="HEHU TONGJI"></TitleVue> -->
+						<div class="title-conponent">
+							<img class="titile-img" src="../images/title-top.png" />
+							<div class="text">位移趋势统计</div>
+							<div class="us">HEHU TONGJI</div>
+							<img class="title-bottom" src="../images/title-bottom.png" />
+						</div>
+						<div id="line-container"></div>
+					</div>
+				</div>
+
+				<div class="right-two">
+					<div class="jiankong-chart">
+						<!-- <TitleVue title-text="视频监控" title-us="HEHU TONGJI"></TitleVue> -->
+						<div class="title-conponent">
+							<img class="titile-img" src="../images/title-top.png" />
+							<div class="text">视频监控</div>
+							<div class="us">HEHU TONGJI</div>
+							<img class="title-bottom" src="../images/title-bottom.png" />
+						</div>
+						<div class="jiankong-container"></div>
+					</div>
+					<div class="yujing-chart">
+						<!-- <TitleVue title-text="预警信息" title-us="HEHU TONGJI"></TitleVue> -->
+						<div class="title-conponent">
+							<img class="titile-img" src="../images/title-top.png" />
+							<div class="text">预警信息</div>
+							<div class="us">HEHU TONGJI</div>
+							<img class="title-bottom" src="../images/title-bottom.png" />
+						</div>
+						<div class="yujing-table">
+							<div class="table-containers">
+								<div class="th-containers">
+									<div class="item">时间</div>
+									<div class="item">名称</div>
+									<div class="item">内容</div>
+								</div>
+								<div class="td-containers">
+									<div class="td-overs">
+										<div class="td">
+											<img class="error" src="../images/error.png" alt="" />
+											<div class="item ellipsis">2022/8/22</div>
+											<div class="item ellipsis">皇家水坝</div>
+											<div class="item ellipsis">内容</div>
+										</div>
+										<div class="td">
+											<img class="error" src="../images/error.png" alt="" />
+											<div class="item ellipsis">2022/8/22</div>
+											<div class="item ellipsis">皇家水坝</div>
+											<div class="item ellipsis">内容</div>
+										</div>
+										<div class="td">
+											<img class="error" src="../images/error.png" alt="" />
+											<div class="item ellipsis">2022/8/22</div>
+											<div class="item ellipsis">皇家水坝</div>
+											<div class="item ellipsis">内容</div>
+										</div>
+										<div class="td">
+											<img class="error" src="../images/error.png" alt="" />
+											<div class="item ellipsis">2022/8/22</div>
+											<div class="item ellipsis">皇家水坝</div>
+											<div class="item ellipsis">内容</div>
+										</div>
+										<div class="td">
+											<img class="error" src="../images/error.png" alt="" />
+											<div class="item ellipsis">2022/8/22</div>
+											<div class="item ellipsis">皇家水坝</div>
+											<div class="item ellipsis">内容</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="zhu-chart"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/dayjs.min.js"></script>
+		<script src="./js/echarts.min.js"></script>
+		<script src="./js/echarts-gl.min.js"></script>
+		<script src="./js/video.min.js"></script>
+		<script src="./cesium/Build/Cesium/Cesium.js"></script>
+		<script src="./js/utils.js"></script>
+		<script src="./js/chart.js"></script>
+		<script src="./js/3DPer.js"></script>
+		<script src="./js/line.js"></script>
+		<script src="./js/videoPlan.js"></script>
+		<script src="./js/WaterPrimitive.js"></script>
+		<script src="./js/PolylineSpriteMaterial.js"></script>
+		<script src="./js/MyViewer.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>

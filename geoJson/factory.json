@@ -1,0 +1,8 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.16411605274838,40.10521826294129]},"properties":{"name":"翠湖再生水厂","type":"再生水厂","X":"116.164116052748","Y":"40.1052182629413"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.19504904582418,40.08684882397628]},"properties":{"name":"稻香湖再生水厂","type":"再生水厂","X":"116.195049045824","Y":"40.0868488239763"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.23273970815653,40.11045307715412]},"properties":{"name":"上庄再生水厂","type":"再生水厂","X":"116.232739708157","Y":"40.1104530771541"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.17447982307827,40.09486678903135]},"properties":{"name":"取水泵站","type":"取水泵站","X":"116.174479823078","Y":"40.0948667890314"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.20747342938513,40.09925689458711]},"properties":{"name":"取水泵站","type":"取水泵站","X":"116.207473429385","Y":"40.0992568945871"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[116.22419687619934,40.09761883397301]},"properties":{"name":"取水泵站","type":"取水泵站","X":"116.224196876199","Y":"40.097618833973"}}
+]}

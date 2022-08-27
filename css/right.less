@@ -1,0 +1,241 @@
+#right-container {
+	position: absolute;
+	right: 0;
+	top: 248px;
+	bottom: 0;
+	width: 2134px;
+	color: #fff;
+	z-index: 100;
+	transition: all 0.5s linear;
+	border: 1px solid red;
+	.opens {
+		width: 32px;
+		height: 250px;
+		position: absolute;
+		right: 2150px;
+		top: 730px;
+		background: url('../images/open.png') no-repeat;
+		background-size: 100% 100%;
+		cursor: pointer;
+	}
+	.isOpens {
+		width: 32px;
+		height: 250px;
+		position: fixed;
+		right: 50px;
+		top: 990px;
+		background: url('../images/open.png') no-repeat;
+		background-size: 100% 100%;
+		cursor: pointer;
+	}
+	.right-one {
+		width: 1089px;
+		height: 100%;
+		position: absolute;
+		right: 20px;
+		border: 1px solid red;
+		.bar-chart {
+			height: 585px;
+			width: 1089px;
+			background-color: rgba(0, 24, 44, 0.5);
+			#bar-container {
+				height: 500px;
+				width: 100%;
+			}
+		}
+		.video-chart {
+			height: 508px;
+			width: 1089px;
+			margin-top: 50px;
+			background-color: rgba(0, 24, 44, 0.5);
+			.video-chart-contianer {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				height: 400px;
+				.item {
+					// border: 1px solid red;
+					width: 360px;
+					height: 122px;
+					margin-top: 40px;
+					display: flex;
+					align-items: center;
+					font-size: 46px;
+					font-weight: 700;
+					padding-left: 50px;
+
+					.img {
+						width: 146px;
+						height: 125px;
+					}
+					.text {
+						margin-left: 10px;
+						font-size: 30px;
+					}
+				}
+			}
+		}
+		.line-cahrt {
+			margin-top: 50px;
+			width: 1089px;
+			height: 720px;
+			background-color: rgba(0, 24, 44, 0.5);
+		}
+		#line-container {
+			width: 1089px;
+			height: 600px;
+		}
+	}
+
+	.right-two {
+		width: 986px;
+		height: 100%;
+		position: absolute;
+		right: 1148px;
+		.jiankong-chart {
+			width: 100%;
+			height: 795px;
+			background-color: rgba(0, 24, 44, 0.5);
+		}
+		.jiankong-container {
+			width: 100%;
+			// border: 1px solid black;
+			height: 685px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+
+			.item {
+				width: 439px;
+				height: 300px;
+				border: 1px solid red;
+				font-size: 46px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				margin-top: 20px;
+				.video-item {
+					width: 439px;
+					height: 281px;
+					// border: 1px solid red;
+				}
+				.text {
+					margin-top: 10px;
+				}
+			}
+		}
+		.yujing-chart {
+			height: 580px;
+			width: 100%;
+			padding-top: 40px;
+			.table-containers {
+				font-size: 50px;
+				margin-top: 35px;
+				.th-containers {
+					width: 100%;
+					height: 86px;
+					background-color: rgba(0, 94, 168, 1);
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					color: rgba(0, 221, 255, 1);
+					.item {
+						flex: 1;
+						padding-left: 80px;
+					}
+					.item:last-child {
+						flex: 1.5;
+					}
+				}
+			}
+			.td-containers {
+				height: 320px;
+				width: 100%;
+				overflow-y: auto;
+				background-color: rgba(0, 24, 44, 0.5);
+
+				.td-over {
+					height: 1000px;
+				}
+				.td {
+					display: flex;
+					height: 100px;
+					align-items: center;
+					font-size: 46px;
+					color: #fff;
+					margin: 10px 0;
+				}
+				.item {
+					padding-left: 10px;
+					flex: 1;
+				}
+				.item:last-child {
+					flex: 1;
+				}
+				.error {
+					margin-left: 20px;
+					margin-right: 10px;
+				}
+			}
+			::-webkit-scrollbar {
+				/*滚动条整体样式*/
+				width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+				height: 1px;
+				color: #005ea8;
+			}
+
+			::-webkit-scrollbar-thumb {
+				/*滚动条里面小方块*/
+				border-radius: 5px;
+				// box-shadow: inset 0 0 5px rgba(12, 12, 12, 0.1);
+				background: #02e2fa;
+			}
+			::-webkit-scrollbar-track {
+				/*滚动条里面轨道*/
+				// box-shadow: inset 0 0 5px rgba(87, 175, 187, 0);
+				border-radius: 10px;
+				background: #16528c;
+			}
+		}
+		#zhu-chart {
+			height: 510px;
+			width: 100%;
+			margin-top: 30px;
+			background-color: rgba(0, 24, 44, 0.5);
+		}
+	}
+}
+
+.tabFlower {
+	width: 350px;
+	height: 370px;
+	position: absolute;
+	right: 2150px;
+	font-size: 42px;
+	.item {
+		width: 322.94px;
+		height: 100px;
+		margin-bottom: 50px;
+		margin-top: 20px;
+		background: url('../images/tabbg.png') no-repeat;
+		background-size: 100% 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+	.isItem {
+		width: 322.94px;
+		height: 100px;
+		margin-bottom: 50px;
+		margin-top: 20px;
+		background: url('../images/tabbg-is.png') no-repeat;
+		background-size: 100% 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+}
